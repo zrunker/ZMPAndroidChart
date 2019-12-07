@@ -4,14 +4,14 @@ import android.graphics.Color;
 import android.text.TextUtils;
 
 /**
- * 扇形图数据
+ * 扇形、圆环图数据
  *
  * @author 邹峰立
  */
 public class PieChartBean<T> {
     private int color;// 扇形颜色 16进制
     private String colorStr;// 扇形颜色 字符串
-    private float proportion;// 比例
+    private float chartData;// 图表数据/比例
     private String label;// 图例对应色块标签
     private T data;// 真实数据
 
@@ -37,12 +37,12 @@ public class PieChartBean<T> {
         this.color = color;
     }
 
-    public float getProportion() {
-        return proportion;
+    public float getChartData() {
+        return chartData;
     }
 
-    public void setProportion(float proportion) {
-        this.proportion = proportion;
+    public void setChartData(float chartData) {
+        this.chartData = chartData;
     }
 
     public String getLabel() {
@@ -65,7 +65,7 @@ public class PieChartBean<T> {
     public String toString() {
         return "PieChartBean{" +
                 "color=" + color +
-                ", proportion=" + proportion +
+                ", chartData=" + chartData +
                 ", label='" + label + '\'' +
                 ", data=" + data +
                 '}';

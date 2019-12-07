@@ -116,7 +116,7 @@ public class ZRingChart extends PieChart {
             List<PieEntry> yVals = new ArrayList<>();
             List<Integer> colors = new ArrayList<>();
             for (PieChartBean data : list) {
-                PieEntry pieEntry = new PieEntry(data.getProportion(), data.getLabel(), data.getData());
+                PieEntry pieEntry = new PieEntry(data.getChartData(), data.getLabel(), data.getData());
                 yVals.add(pieEntry);
                 // 添加颜色
                 colors.add(data.getColor());

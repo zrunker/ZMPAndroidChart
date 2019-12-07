@@ -42,15 +42,15 @@ public class MainActivity extends AppCompatActivity {
             list.add(pieChartBean);
             if (i == 0) {
                 pieChartBean.setColorStr("#1B9E0D");
-                pieChartBean.setProportion(3000.5f);
+                pieChartBean.setChartData(3000.5f);
                 pieChartBean.setLabel("支出运费(万元)");
             } else if (i == 1) {
                 pieChartBean.setColorStr("#67E020");
-                pieChartBean.setProportion(1000.37f);
+                pieChartBean.setChartData(1000.37f);
                 pieChartBean.setLabel("支出税(万元)");
             } else {
                 pieChartBean.setColorStr("#E02020");
-                pieChartBean.setProportion(6000.78f);
+                pieChartBean.setChartData(6000.78f);
                 pieChartBean.setLabel("总利润(万元)");
             }
         }
