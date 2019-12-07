@@ -29,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         // 扇形图
         zPieChart = findViewById(R.id.z_pie_chart_1);
+        // 圆环图
         pieChart = findViewById(R.id.z_pie_chart);
+
+        // 初始化图形
         initPieChart();
     }
 
-    // 显示扇形图
+    // 显示扇形图 - 圆环图
     private void initPieChart() {
         // 初始化数据数据
         ArrayList<PieChartBean> list = new ArrayList<>();
@@ -55,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // 扇形图
+        // 设置扇形图
         zPieChart.setPieData(list);
 
-        // 圆环图
+        // 设置圆环图
         // 设置中间文字
         pieChart.setCenterText(generateCenterText(8888.88f));
         pieChart.setCenterTextColor(Color.parseColor("#999999"));
