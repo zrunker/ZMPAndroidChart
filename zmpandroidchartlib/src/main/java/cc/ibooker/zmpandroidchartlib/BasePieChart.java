@@ -39,7 +39,7 @@ public class BasePieChart extends PieChart {
         return pieData;
     }
 
-    // 得到图片Legend
+    // 得到图列Legend
     public Legend getLegend() {
         if (mLegend == null)
             mLegend = super.getLegend();

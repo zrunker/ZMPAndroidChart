@@ -1,21 +1,27 @@
 package cc.ibooker.zmpandroidchart;
 
 import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 
+import com.github.mikephil.charting.data.LineDataSet;
+
 import java.util.ArrayList;
 
+import cc.ibooker.zmpandroidchartlib.ZLineChart;
 import cc.ibooker.zmpandroidchartlib.ZPieChart;
 import cc.ibooker.zmpandroidchartlib.ZRingChart;
+import cc.ibooker.zmpandroidchartlib.dto.LineChartBean;
 import cc.ibooker.zmpandroidchartlib.dto.PieChartBean;
 
 public class MainActivity extends AppCompatActivity {
     private ZRingChart pieChart;
     private ZPieChart zPieChart;
+    private ZLineChart zLineChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +37,13 @@ public class MainActivity extends AppCompatActivity {
         zPieChart = findViewById(R.id.z_pie_chart_1);
         // 圆环图
         pieChart = findViewById(R.id.z_pie_chart);
+        // 折线图
+        zLineChart = findViewById(R.id.z_line_chart);
 
         // 初始化图形
         initPieChart();
+        // 初始化折线图
+        initLineChart();
     }
 
     // 显示扇形图 - 圆环图
@@ -84,5 +94,41 @@ public class MainActivity extends AppCompatActivity {
         s.setSpan(new ForegroundColorSpan(Color.parseColor("#000000")), start, end, 0);
         return s;
     }
+
+    // 初始化折线图数据
+    private void initLineChart() {
+        ArrayList<LineChartBean> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            LineChartBean lineChartBean = new LineChartBean();
+            lineChartBean.setX(i);
+            lineChartBean.setY(10 + i);
+            list.add(lineChartBean);
+        }
+        for (int i = 0; i < 5; i++) {
+            LineChartBean lineChartBean = new LineChartBean();
+            lineChartBean.setX(10 - i);
+            lineChartBean.setY(15 - i);
+            list.add(lineChartBean);
+        }
+        zLineChart.setLineChartData(list, null)
+                .enableDashedLine(10f, 5f, 0f)
+                .setColor(Color.BLACK)
+                .setCircleColor(Color.BLACK)
+                .setLineWidth(1f)
+                .setCircleRadius(3f)
+                .setDrawCircleHole(false)
+                .setValueTextSize(9f)
+                .setDrawFilled(true)
+                .setFormLineWidth(1f)
+                .setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f))
+                .setFormSize(15f)
+                .setFillColor(Color.YELLOW)
+                .setMode(LineDataSet.Mode.CUBIC_BEZIER)
+                .enableDashedHighlightLine(10f, 5f, 0f);
+    }
 }
+
+
+
+
 

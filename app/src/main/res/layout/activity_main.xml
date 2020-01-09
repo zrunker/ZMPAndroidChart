@@ -8,7 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp">
 
         <cc.ibooker.zmpandroidchartlib.ZPieChart
             android:id="@+id/z_pie_chart_1"
@@ -21,6 +23,11 @@
             android:layout_height="250dp"
             android:layout_marginTop="50dp" />
 
+        <cc.ibooker.zmpandroidchartlib.ZLineChart
+            android:id="@+id/z_line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="50dp" />
     </LinearLayout>
 
 </ScrollView>

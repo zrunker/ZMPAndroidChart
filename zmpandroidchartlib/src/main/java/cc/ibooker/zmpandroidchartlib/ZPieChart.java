@@ -103,7 +103,7 @@ public class ZPieChart extends BasePieChart {
 
             // 待显示数据
             pieData = new PieData(pieDataSet);
-            this.setData(pieData);
+            setData(pieData);
             // 刷新
             invalidate();
         }
